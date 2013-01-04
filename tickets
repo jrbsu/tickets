@@ -2,7 +2,7 @@
 <html>
 <head>
 <script>
-function myFunction()
+function workingOut()
 {
 // Grab everything from the form...
 var tixgot=document.getElementById("tixgot").value;
@@ -62,7 +62,7 @@ else if(moneymade<tixvalue)
 </form> 
 
 <p id="tickets">Click the button to calculate...</p>
-<button type="button" onclick="myFunction()">Click me</button>
+<button type="button" onclick="workingOut()">Click me</button>
 
 </body>
 </html>

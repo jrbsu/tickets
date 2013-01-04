@@ -36,7 +36,7 @@ else if(moneymade>tixvalue)
 else if(moneymade<tixvalue)
 	{
 	var result=tixvalue-moneymade;
-	document.getElementById("tickets").innerHTML="You are out! You are over by " + result + " pounds; you should have " + tixvalue + " pounds but you have " + moneymade + " pounds.";
+	document.getElementById("tickets").innerHTML="You are out! You are under by " + result + " pounds; you should have " + tixvalue + " pounds but you have " + moneymade + " pounds.";
 	}
 }
 </script>

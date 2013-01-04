@@ -25,7 +25,7 @@ var moneymade=(fifties*50+twenties*20+tens*10+fives*5+bags*20+coins*1);
 
 // Working out if the money made equals the money expected...
 if(moneymade==tixvalue)
-  {
+	{
 	document.getElementById("tickets").innerHTML="You are balanced! You have " + moneymade + " pounds and your tickets come to " + tixvalue + " pounds.";
 	}
 else if(moneymade>tixvalue)
@@ -36,7 +36,7 @@ else if(moneymade>tixvalue)
 else if(moneymade<tixvalue)
 	{
 	var result=tixvalue-moneymade;
-	document.getElementById("tickets").innerHTML="You are out! You are over by " + result + "; you should have " + tixvalue + " pounds but you have " + moneymade + " pounds.";
+	document.getElementById("tickets").innerHTML="You are out! You are over by " + result + " pounds; you should have " + tixvalue + " pounds but you have " + moneymade + " pounds.";
 	}
 }
 </script>

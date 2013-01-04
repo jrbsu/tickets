@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction()
+{
+// Grab everything from the form...
+var tixgot=document.getElementById("tixgot").value;
+var tixleft=document.getElementById("tixleft").value;
+var stubs=document.getElementById("stubs").value;
+
+var fifties=document.getElementById("fifties").value;
+var twenties=document.getElementById("twenties").value;
+var tens=document.getElementById("tens").value;
+var fives=document.getElementById("fives").value;
+var bags=document.getElementById("bags").value;
+var coins=document.getElementById("coins").value;
+
+// Some sums to work things out...
+var concessions=stubs;
+var adults=tixgot-tixleft-stubs;
+var tixvalue=concessions*17+adults*23;
+
+var moneymade=(fifties*50+twenties*20+tens*10+fives*5+bags*20+coins*1);
+
+// Working out if the money made equals the money expected...
+if(moneymade==tixvalue)
+  {
+	document.getElementById("tickets").innerHTML="You are balanced! You have " + moneymade + " pounds and your tickets come to " + tixvalue + " pounds.";
+	}
+else if(moneymade>tixvalue)
+	{
+	var result = moneymade-tixvalue;
+	document.getElementById("tickets").innerHTML="You are out! You are over by " + result + " pounds; you should have " + tixvalue + " pounds but you have " + moneymade + " pounds.";
+	}
+else if(moneymade<tixvalue)
+	{
+	var result=tixvalue-moneymade;
+	document.getElementById("tickets").innerHTML="You are out! You are over by " + result + "; you should have " + tixvalue + " pounds but you have " + moneymade + " pounds.";
+	}
+}
+</script>
+</head>
+
+<body>
+
+<h1>Ticket Calculator</h1>
+
+<form id="ticketform" action="form_action.asp">
+  <h2>Tickets</h2>
+  Tickets got: <input type="number" id="tixgot" value="250"><br>
+  Tickets left: <input type="number" id="tixleft" value="200"><br>
+  Stubs: <input type="number" id="stubs" value="25"><br>
+  
+  <h2>Monies</h2>
+  Fifties: <input type="number" id="fifties" value="0"><br>
+  Twenties: <input type="number" id="twenties" value="1"><br>
+  Tens: <input type="number" id="tens" value="1"><br>
+  Fives: <input type="number" id="fives" value="1"><br>
+  Pound bags: <input type="number" id="bags" value="1"><br>
+  Loose coins: <input type="number" id="coins" value="1"><br>
+</form> 
+
+<p id="tickets">Click the button to calculate...</p>
+<button type="button" onclick="myFunction()">Click me</button>
+
+</body>
+</html>

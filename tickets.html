@@ -9,6 +9,7 @@ var tixgot=document.getElementById("tixgot").value;
 var tixleft=document.getElementById("tixleft").value;
 var stubs=document.getElementById("stubs").value;
 
+var float1=document.getElementById("float1").value;
 var fifties=document.getElementById("fifties").value;
 var twenties=document.getElementById("twenties").value;
 var tens=document.getElementById("tens").value;
@@ -19,9 +20,9 @@ var coins=document.getElementById("coins").value;
 // Some sums to work things out...
 var concessions=stubs;
 var adults=tixgot-tixleft-stubs;
-var tixvalue=concessions*17+adults*23;
+var tixvalue=concessions*20+adults*26;
 
-var moneymade=(fifties*50+twenties*20+tens*10+fives*5+bags*20+coins*1);
+var moneymade=((fifties*50+twenties*20+tens*10+fives*5+bags*20+coins*1)-float1);
 
 // Working out if the money made equals the money expected...
 if(moneymade==tixvalue)
@@ -53,6 +54,7 @@ else if(moneymade<tixvalue)
   Stubs: <input type="number" id="stubs" value="25"><br>
   
   <h2>Monies</h2>
+  Float: <input type="number" id="float1" value="300"><br>
   Fifties: <input type="number" id="fifties" value="0"><br>
   Twenties: <input type="number" id="twenties" value="1"><br>
   Tens: <input type="number" id="tens" value="1"><br>
